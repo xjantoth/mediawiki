@@ -18,8 +18,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Docker Linuxinuse";
-$wgMetaNamespace = "Docker_Linuxinuse";
+$wgSitename = "Linuxinuse";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -53,7 +52,7 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "sqlite";
 $wgDBserver = "";
-$wgDBname = "mediawiki_7";
+$wgDBname = "docker_mediawiki_2";
 $wgDBuser = "";
 $wgDBpassword = "";
 
@@ -102,14 +101,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "9025f0594e3acf37046d902e48855f76bd6726058c098eab6bff10e298fc1b0b";
+$wgSecretKey = "8686b2dc54cbdafe5584463485b3a6b3e7da5f49fc77584ca168bb5972605fb1";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "4eb1f3523bfb81f1";
+$wgUpgradeKey = "57b248ada25a937b";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation

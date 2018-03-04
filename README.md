@@ -1,6 +1,21 @@
 
 ## Hwo to use this Docker image
 
+
+#### at your local filesystem delete ../data folder
+
+```
+# this location is basically "sqlite database storage"
+
+cd /opt/mediawiki
+rm -rf data/*
+mv www/mediawiki/LocalSettings.php www/mediawiki/LocalSettings.php.orig
+
+
+```
+
+
+
 #### Note
 ```
 docker image prune -a

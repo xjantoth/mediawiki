@@ -2,11 +2,10 @@ FROM alpine:edge
 MAINTAINER JAN TOTH <toth.janci@gmail.com>
 
 RUN addgroup -g 1000 -S www-data \
- && adduser -u 1000 -D -S -G www-data www-data && mkdir -p /var/lib/nginx/data
-
-RUN addgroup -g 1000 -S www-data \
     && adduser -u 1000 -D -S -G www-data www-data \ 
     && mkdir -p /var/lib/nginx/data \
+    && mkdir -p /var/tmp/nginx \
+    && chown -R www-data.www-data /var/tmp/nginx \
     && chown -R www-data.www-data /var/lib/nginx/data \ 
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk upgrade --no-cache && \
@@ -26,5 +25,3 @@ RUN addgroup -g 1000 -S www-data \
 COPY supervisord.conf /etc/supervisord.conf
 
 ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
-
-
