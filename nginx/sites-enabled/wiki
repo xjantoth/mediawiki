@@ -1,0 +1,32 @@
+server {
+    listen 10400 default_server;                                         
+    listen [::]:10400 default_server;
+
+location ~ \.php$ {
+                #include snippets/fastcgi-php.conf;
+                #include /etc/nginx/fastcgi_params;
+                #include /etc/nginx/fastcgi.conf;
+                # With php5-cgi alone:
+
+                fastcgi_pass 127.0.0.1:9000;
+                # With php5-fpm:
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                #fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+                include fastcgi_params;
+       }
+
+
+location /mediawiki/ {
+        alias /var/www/mediawiki/;
+        autoindex on;
+        index  index.php index.html index.htm; 
+        allow all;
+        #allow 127.0.0.1;
+        #deny all;
+
+    }
+
+
+}
