@@ -28,7 +28,9 @@ $wgSitename = "Linuxinuse";
 $wgScriptPath = "/mediawiki";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://163.172.190.48:10400";
+
+##$wgServer = "http://163.172.190.48:10400";
+$wgServer = "http://scaleway.linuxinuse.com:10400";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
